@@ -1,31 +1,34 @@
 kafka:
-  host: "kafka.arc2.nile.works"
-  port: "9092"
-  use.ip: "true"
+  host: ''
+  port: ''
+  use.ip: 'true'
 kafka.producer:
-  publish.path: "/kafka/publish"
-  port: 8080
-  properties:
-    client.id: "test"
-    acks: "1"
-    retries: "5"
-    retry.backoff.ms: "1000"
-    reconnect.backoff.ms: "1000"
-    key.serializer: "org.apache.kafka.common.serialization.StringSerializer"
-    value.serializer: "org.apache.kafka.common.serialization.StringSerializer"
-    batch.size: "32000"
-    linger.ms: "10"
+  servers: ''
+  retries: '5'
+  batch.size: '32000'
+  publish.path: /kafka/publish
+  linger.ms: '10'
+  buffer.memory: ''
+  port: null
+  client.id: test
+  acks: '1'
+  retry.backoff.ms: '1000'
+  reconnect.backoff.ms: '1000'
+  key.serializer: org.apache.kafka.common.serialization.StringSerializer
+  value.serializer: org.apache.kafka.common.serialization.StringSerializer
 kafka.consumers:
-  -
-    topics: "kafkaserviceinterfacesample.topic1"
-    callback.url: ""
-    failure.topic: ""
-    failure.retries: 3
-    dead.topic: ""
-    dead.callback.url: ""
-    properties:
-      group.id: ""
-      max.partition.fetch.bytes: "1000000"
-      enable.auto.commit: "false"
-      key.deserializer: ""
-      value.deserializer: ""
+  servers: ''
+  enable.auto.commit: 'false'
+  auto.commit.interval: ''
+  auto.offset.reset: ''
+  group.id: ''
+  topic: ''
+  concurrency: ''
+  callback.url: ''
+  failure.topic: ''
+  failure.retries: 3
+  dead.topic: ''
+  dead.callback.url: ''
+  max.partition.fetch.bytes: '1000000'
+  key.deserializer: ''
+  value.deserializer: ''
