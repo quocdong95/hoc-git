@@ -1,6 +1,6 @@
 integration_name: com.newrelic.rabbitmq
 instances:
-  - name: <cluster name>
+    name: <cluster name>
     command: '<"all", "inventory", or "events">'
     arguments:
       hostname: <hostname or IP of RabbitMQ host>
