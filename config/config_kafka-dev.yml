@@ -1,0 +1,31 @@
+kafka:
+  host: "kafka.arc2.nile.works"
+  port: "9092"
+  use.ip: "true"
+kafka.producer:
+  publish.path: "/kafka/publish"
+  port: 8080
+  properties:
+    client.id: "test"
+    acks: "1"
+    retries: "5"
+    retry.backoff.ms: "1000"
+    reconnect.backoff.ms: "1000"
+    key.serializer: "org.apache.kafka.common.serialization.StringSerializer"
+    value.serializer: "org.apache.kafka.common.serialization.StringSerializer"
+    batch.size: "32000"
+    linger.ms: "10"
+kafka.consumers:
+  -
+    topics: "kafkaserviceinterfacesample.topic1"
+    callback.url: ""
+    failure.topic: ""
+    failure.retries: 3
+    dead.topic: ""
+    dead.callback.url: ""
+    properties:
+      group.id: ""
+      max.partition.fetch.bytes: "1000000"
+      enable.auto.commit: "false"
+      key.deserializer: ""
+      value.deserializer: ""
