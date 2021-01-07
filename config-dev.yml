@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: redis
+  redis:
+    host: localhost
+    port: 6789
+    password: abc
+    timeout: 5000
+    maxActive: 20
+    maxIdle: 20
+    minIdle: 0
+    maxWait: 30000
